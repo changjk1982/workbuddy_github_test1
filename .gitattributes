@@ -27,9 +27,19 @@
 *.cmd   text eol=crlf
 *.bat   text eol=crlf
 
+# CSV：BOM 等物料清单，文本处理；文件内含 UTF-8 BOM(EF BB BF) 供 Excel 识别编码，
+# git 只做行尾归一化，不会删除 BOM 字节
+*.csv   text eol=lf
+
 # --- 强制按二进制处理（防止 git 做行尾转换而损坏文件）---
 # 为什么单列：git 对二进制文件的误判会造成静默损坏，
 # 这类文件一旦损坏无法用 diff 察觉，只能在导出时才发现，代价极高。
+#
+# ★ .epro2 是本工程唯一的权威源文件（原理图+PCB），本质是 zip 容器。
+#   必须以二进制处理：一旦被当作文本做行尾转换，工程将无法在 EDA 中导入。
+*.epro2 binary
+*.epru  binary
+*.webp  binary
 *.png   binary
 *.jpg   binary
 *.jpeg  binary

@@ -31,8 +31,32 @@ workbuddy_github_test1/
 ├── .gitattributes    行尾符与二进制处理策略
 ├── docs/
 │   └── github-tls-mitm-troubleshooting.md   GitHub 访问故障排查记录
+├── hardware/
+│   └── STM32F103C8T6-MinSys/                STM32F103C8T6 最小系统板（详见该目录 README）
+│       ├── STM32F103C8T6-MinSys.epro2       工程源文件（原理图 + PCB）
+│       ├── BOM/                             物料清单
+│       ├── images/                          原理图 / PCB 预览
+│       └── README.md                        硬件设计说明
+├── tools/
+│   ├── epro_parse.py                        .epro2 工程文件解析器
+│   └── gen_bom.py                           从工程文件离线生成 BOM
 └── README.md         本文件
 ```
+
+## 工程内容
+
+### `hardware/STM32F103C8T6-MinSys` —— STM32F103C8T6 最小系统板
+
+| 项目 | 参数 |
+|---|---|
+| 主控 | STM32F103C8T6（LQFP-48） |
+| 供电 | USB Type-C 5V → AMS1117-3.3 → 3.3V |
+| 时钟 | 8MHz 无源晶振 |
+| 板框 | 45.72 × 31.75 mm |
+| 元件 | 25 个（14 种物料） |
+| 状态 | 原理图完成（ERC 0 错误）；PCB 已完成布局/板框/安装孔/Mark 点，**布线待完成** |
+
+详细设计说明、网表、PCB 参数见 [`hardware/STM32F103C8T6-MinSys/README.md`](hardware/STM32F103C8T6-MinSys/README.md)。
 
 ## 环境依赖（本机）
 
