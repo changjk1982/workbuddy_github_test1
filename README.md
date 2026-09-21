@@ -6,8 +6,8 @@
 
 本仓库是链路打通后的首个测试工程，验证三件事：
 
-1. 本地 git 能直连 `github.com`（此前本机 `.gitconfig` 中有一条 `insteadOf` 重写规则会把 `github.com` 劫持到 `jihulab.com`，已移除）
-2. 工程源文件可正常提交并推送到远端私有仓库
+1. 本地 git 能连通 `github.com`（曾有两层障碍：`.gitconfig` 中的 `insteadOf` 重写规则、以及 Steam++ 的本地 TLS 中间人，均已解决 —— 详见 [`docs/github-tls-mitm-troubleshooting.md`](docs/github-tls-mitm-troubleshooting.md)）
+2. 工程源文件可正常提交并推送到远端仓库
 3. `.gitignore` 规则能正确把 EDA 的 `_tmp/` 与缓存目录挡在版本控制之外
 
 ## 约定的版本控制原则
@@ -29,6 +29,8 @@
 workbuddy_github_test1/
 ├── .gitignore        排除规则（含判定标准与排查方法）
 ├── .gitattributes    行尾符与二进制处理策略
+├── docs/
+│   └── github-tls-mitm-troubleshooting.md   GitHub 访问故障排查记录
 └── README.md         本文件
 ```
 
