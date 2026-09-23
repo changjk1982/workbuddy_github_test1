@@ -54,7 +54,7 @@ workbuddy_github_test1/
 | 时钟 | 8MHz 无源晶振 |
 | 板框 | 45.72 × 31.75 mm |
 | 元件 | 25 个（14 种物料） |
-| 状态 | 原理图完成（ERC 0 错误）；PCB 已完成布局/板框/安装孔/Mark 点，**布线待完成** |
+| 状态 | 原理图完成（ERC 0 错误）；PCB 已完成布局/板框/安装孔/Mark 点/**布线（DRC 0 错误通过）** |
 
 详细设计说明、网表、PCB 参数见 [`hardware/STM32F103C8T6-MinSys/README.md`](hardware/STM32F103C8T6-MinSys/README.md)。
 
